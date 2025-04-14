@@ -1,0 +1,15 @@
+{"timestamp": "2025-03-19T10:00:01Z", "user_id": "user123", "action": "LOGIN", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:00:05Z", "user_id": "user999", "action": "LOGIN", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:02:10Z", "user_id": "user123", "action": "VIEW_PAGE", "status": "200", "message": "Visited /home"}
+{"timestamp": "2025-03-19T10:02:12Z", "user_id": "user123", "action": "VIEW_PAGE", "status": "200", "message": "Visited /profile"}
+{"timestamp": "2025-03-19T10:03:00Z", "user_id": "user888", "action": "LOGIN", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:03:10Z", "user_id": "user999", "action": "VIEW_PAGE", "status": "404", "message": "Page not found: /xyz"}
+{"timestamp": "2025-03-19T10:04:50Z", "user_id": "user888", "action": "VIEW_PAGE", "status": "200", "message": "Visited /dashboard"}
+{"timestamp": "2025-03-19T10:05:00Z", "user_id": "user999", "action": "LOGOUT", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:05:05Z", "user_id": "user123", "action": "VIEW_PAGE", "status": "500", "message": "Server error at /settings"}
+{"timestamp": "2025-03-19T10:06:00Z", "user_id": "user888", "action": "UPDATE_PROFILE", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:06:30Z", "user_id": "user888", "action": "LOGOUT", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:07:00Z", "user_id": "user123", "action": "LOGOUT", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:08:15Z", "user_id": "user999", "action": "LOGIN", "status": "FAILURE", "message": "Invalid credentials"}
+{"timestamp": "2025-03-19T10:09:00Z", "user_id": "user101", "action": "LOGIN", "status": "SUCCESS"}
+{"timestamp": "2025-03-19T10:10:10Z", "user_id": "user101", "action": "VIEW_PAGE", "status": "200"}

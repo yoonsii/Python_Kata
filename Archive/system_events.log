@@ -1,0 +1,20 @@
+2025-03-18T09:30:45Z INFO  user:1234  Login         success
+2025-03-18T09:31:10Z WARN  user:1234  SessionCheck  expired
+2025-03-18T09:31:12Z INFO  user:5678  Login         success
+2025-03-18T09:31:15Z INFO  user:5678  GET /products 200
+2025-03-18T09:31:16Z ERROR user:5678  GET /cart     500  "Internal Server Error"
+2025-03-18T09:31:30Z INFO  user:7890  Login         failure
+2025-03-18T09:31:40Z INFO  user:7890  Login         success
+2025-03-18T09:31:41Z DEBUG user:1234  GET /profile  200
+2025-03-18T09:31:42Z WARN  user:5678  POST /cart    400  "Malformed Input"
+2025-03-18T09:31:50Z INFO  user:9999  Login         success
+2025-03-18T09:31:59Z DEBUG user:9999  GET /home     200
+2025-03-18T09:32:00Z INFO  user:5678  PUT /account  201
+2025-03-18T09:32:10Z ERROR user:7890  GET /orders   500  "Database Timeout"
+2025-03-18T09:32:15Z INFO  user:1234  GET /products 200
+2025-03-18T09:32:18Z INFO  user:9999  Logout        success
+2025-03-18T09:32:20Z WARN  user:9999  SessionCheck  near-expiry
+2025-03-18T09:32:25Z ERROR user:5678  POST /cart    503  "Service Unavailable"
+2025-03-18T09:32:30Z INFO  user:5678  Logout        success
+2025-03-18T09:32:35Z DEBUG user:1234  GET /profile  304
+2025-03-18T09:33:00Z INFO  user:1234  Login         success
