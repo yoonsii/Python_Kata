@@ -1,0 +1,12 @@
+2025-03-20 09:00:00 INFO  Application started
+2025-03-20 09:00:05 DEBUG Initializing modules
+2025-03-20 09:00:06 INFO  User login successful
+2025-03-20 09:00:07 WARN  Low disk space on /dev/sda1
+2025-03-20 09:00:10 ERROR Disk read failure
+2025-03-20 09:00:11 INFO  Retrying operation
+2025-03-20 09:00:15 ERROR Timeout while connecting to server
+2025-03-20 09:00:20 DEBUG Cleaning up temp files
+2025-03-20 09:00:25 INFO  Operation completed
+2025-03-20 09:00:27 WARN  High memory usage detected
+2025-03-20 09:00:30 INFO  Shutting down application
+2025-03-20 09:00:35 DEBUG Modules shut down
