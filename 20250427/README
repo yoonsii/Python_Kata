@@ -1,0 +1,20 @@
+Python script that:
+
+    Takes a directory path (where log files are stored).
+
+    For each .log file:
+
+        Check each line's timestamp. Only consider lines from the last 5 minutes.
+
+        Count how many of those lines contain either:
+
+            the word "ERROR"
+
+            or "500" (HTTP 500 errors).
+
+    If a file has more than 10 such errors within the last 5 minutes:
+
+        Create an alert file named {original_filename}_alert.txt
+
+        Alert file text format:
+        ALERT: {filename} has {error_count} errors in last 5 minutes.

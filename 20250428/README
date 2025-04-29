@@ -1,0 +1,52 @@
+Exercise: Config File Validator
+
+Objective:
+---------
+Scan a directory containing .conf files and check that each file contains all required configuration keys.
+
+Requirements:
+-------------
+1. Input:
+    - A directory path containing multiple .conf files.
+
+2. Each .conf file:
+    - Contains key=value pairs (one pair per line).
+    - May be missing one or more required keys.
+
+3. Required keys:
+    - username
+    - password
+    - host
+    - port
+
+4. Script functionality:
+    - Loop through all .conf files in the given directory.
+    - Parse each file into a dictionary.
+    - Identify and report missing keys for each file.
+
+5. Output:
+    - For each file missing keys, print:
+        File: {filename}
+        Missing: {list of missing keys}
+    - If a file has all required keys, no output for that file.
+
+Constraints:
+------------
+- No third-party libraries (e.g., no use of configparser).
+- Use only standard libraries (os, argparse, open, etc.).
+- Follow clean Python structure with functions.
+- Protect execution with if __name__ == "__main__".
+
+Example Output:
+---------------
+File: db1.conf
+Missing: password
+
+File: db2.conf
+Missing: username, host
+
+File: db4.conf
+Missing: password, port
+
+File: db5.conf
+Missing: username, password, host, port
