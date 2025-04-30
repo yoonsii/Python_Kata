@@ -4,23 +4,22 @@ import argparse
 VALID_KEYS = ['username', 'password', 'host', 'port']
 
 def process_line(line, keys_dict):
-
     splitline = line.replace("\n","").split("=")
     keys_dict[splitline[0]] = splitline[1]
-
     return keys_dict
     
 def find_missing_keys(keys_dict):
-
     missing = [word for word in VALID_KEYS if word not in keys_dict]
-    
     return missing
 
 def find_missing_values(keys_dict):
-
     present = [word for word in VALID_KEYS if word in keys_dict]
-
     return present
+
+def print_missing_values(keys_dict):
+    # print('test')
+    for key in keys_dict:
+        print(key, end=" ")
 
 
 
@@ -43,13 +42,16 @@ def main():
             process_line(line, conf_pairs)
 
 
-    print(find_missing_keys(conf_pairs))
+    missing = find_missing_keys(conf_pairs)
+    # print_missing_values(missing)
 
     missing_values = find_missing_values(conf_pairs)
 
-    for key in missing_values:
-        if conf_pairs[key] == "":
-            print(f"The key: {key} is missing a value.")
+    # for key in missing_values:
+    #     if conf_pairs[key] == "":
+    #         print(f"The key: {key} is missing a value.")
+    
+    print(f"Missing: {', '.join(missing_values)}")
 
 if __name__ == "__main__":
     main()
