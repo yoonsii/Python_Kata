@@ -17,7 +17,6 @@ def find_missing_values(keys_dict):
     return present
 
 def print_missing_values(keys_dict):
-    # print('test')
     for key in keys_dict:
         print(key, end=" ")
 
@@ -27,8 +26,6 @@ def main():
 
     conf_pairs = {}
 
-    # filename = "db1.conf"
-
     parser = argparse.ArgumentParser()
     parser.add_argument("filename")
     args = parser.parse_args()
@@ -36,21 +33,12 @@ def main():
 
     print(f"Filename: {filename}")
 
-
     with open(filename) as file:
         for line in file:
             process_line(line, conf_pairs)
 
-
     missing = find_missing_keys(conf_pairs)
-    # print_missing_values(missing)
-
     missing_values = find_missing_values(conf_pairs)
-
-    # for key in missing_values:
-    #     if conf_pairs[key] == "":
-    #         print(f"The key: {key} is missing a value.")
-    
     print(f"Missing: {', '.join(missing_values)}")
 
 if __name__ == "__main__":
