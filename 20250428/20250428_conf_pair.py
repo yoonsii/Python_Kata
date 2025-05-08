@@ -4,24 +4,20 @@ import argparse
 VALID_KEYS = ['username', 'password', 'host', 'port']
 
 def process_line(line, keys_dict):
-    if not (line == "" or "\n"):
-        splitline = line.replace("\n","").split("=")
-        keys_dict[splitline[0]] = splitline[1]
+    parts = line.strip().split("=", 1)
+    if len(parts) == 2:
+        key, value = parts
+        keys_dict[key] = value
     return keys_dict
     
 def find_missing_keys(keys_dict):
     missing = [word for word in VALID_KEYS if word not in keys_dict]
     return missing
 
-def find_existing_keys(keys_dict):
-    present = [word for word in VALID_KEYS if word in keys_dict]
-    return present
-
 # Optional Not in Spec but made for learning purposes
-def print_missing_values(keys_dict):
-    # print('test')
-    for key in keys_dict:
-        if keys_dict[key] == "":
+def print_keys_with_blank_values(keys_dict):
+    for key in VALID_KEYS:
+        if keys_dict.get(key, None) is not None and keys_dict[key].strip() == "":
             print(f"The key: {key} is missing a value.")
 
 
@@ -30,6 +26,7 @@ def main():
 
     conf_pairs = {}
 
+    # Commmented out for ease of testing - hardcoded filename only for testing
     # parser = argparse.ArgumentParser()
     # parser.add_argument("filename")
     # args = parser.parse_args()
@@ -46,7 +43,7 @@ def main():
 
     missing_keys = find_missing_keys(conf_pairs)
 
-    # print_missing_values(conf_pairs)
+    print_keys_with_blank_values(conf_pairs)
 
     print(f"Missing: {', '.join(missing_keys)}")
 
