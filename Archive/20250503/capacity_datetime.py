@@ -14,8 +14,6 @@ print(f"Scanning files - Cutoff date is:  {CUTOFF_DATE}")
 size_dict = defaultdict(int)
 
 
-
-
 def process_line(line):
     parts = line.split(" ", 3)
     return parts
