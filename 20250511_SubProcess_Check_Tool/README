@@ -1,0 +1,53 @@
+Exercise: Command Health Check Report
+
+Objective:
+----------
+Read a list of system commands from a file and generate a simple health report by executing each command and summarizing the result.
+
+Requirements:
+-------------
+1. Input:
+   - A file called commands.txt where each line contains a shell command to execute.
+
+2. Each command should be executed using Python's subprocess module:
+   - Use subprocess.run()
+   - Set capture_output=True
+   - Set text=True
+   - Set shell=True
+
+3. For each command:
+   - Print the command string
+   - Print the return code (exit code)
+   - Print the first line of output from stdout or stderr (whichever is available)
+
+4. Your script must handle:
+   - Commands that fail or do not exist (e.g. 'badcommand')
+   - Empty lines should be skipped
+   - The program should not crash if one command fails
+
+5. Output format example:
+   Command: ping -c 1 127.0.0.1
+   Return Code: 0
+   Output: 64 bytes from 127.0.0.1...
+
+   Command: curl -I https://www.google.com
+   Return Code: 0
+   Output: HTTP/2 200
+
+   Command: badcommand
+   Return Code: 127
+   Output: /bin/sh: badcommand: command not found
+
+Constraints:
+------------
+- Use only standard libraries (subprocess, open, etc.)
+- Use functions and main() guard (if __name__ == "__main__")
+- Keep output readable and consistent
+
+Test File:
+----------
+Sample commands.txt contents:
+    ping -c 1 127.0.0.1
+    curl -I https://www.google.com
+    uptime
+    badcommand
