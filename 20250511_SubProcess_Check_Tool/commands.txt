@@ -1,3 +1,4 @@
+whatisthis
 ping -c 1 google.com
 ping -c 1 127.0.0.1
 curl -I https://www.google.com

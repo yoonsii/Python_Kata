@@ -5,27 +5,44 @@ parser = argparse.ArgumentParser()
 parser.add_argument("filename")
 args = parser.parse_args()
 
-print(args.filename)
-filename = args.filename
+def main():
+    print(args.filename)
+    filename = args.filename
 
-#with open(filename) as file:
-#    for line in file:
-#        print(line)
+    #with open(filename) as file:
+    #    for line in file:
+    #        print(line)
 
-with open(filename) as file:
-    line = file.readline()
+    with open(filename) as file:
+        line = file.readline()
 
-    command_components = line.split()
+        command_components = line.split()
 
 
-print(line)
-print(command_components)
+    # print(line)
+    print(command_components)
 
-output = subprocess.run(line, capture_output=True, shell=True, text=True)
-print(output)
+    # Note - 
 
-print(f"Return Code: {output.returncode}")
-print(f"stdout: {output.stdout}")
-print(f"stderr: {output.stderr}")
+    output = subprocess.run(line, capture_output=True, shell=True, text=True)
+    print(output)
 
+    firstline = ""
+
+
+    print(firstline)
+
+
+    print(f"Command: {line}")
+    print(f"Return Code: {output.returncode}")
+    if (output.stdout != ""):
+        firstline, *_ = output.stdout.split("\n",1)
+    else:
+        firstline, *_ = output.stderr.split("\n",1)
+
+    print(f"Output: {firstline}")
+
+
+if __name__ == "__main__":
+    main()
 
