@@ -11,12 +11,19 @@ def process_lines(line):
     
     output = subprocess.run(line, capture_output=True, shell=True, text=True)
     firstline = ""
+    
+    stdout = output.stdout.strip()
+    stderr = output.stderr.strip()
+    
     print(f"Command: {line.strip()}")
     print(f"Return Code: {output.returncode}")
-    if (output.stdout != ""):
-        firstline, *_ = output.stdout.split("\n",1)
+    if stdout:
+        first_line = stdout.splitlines()[0] # Much better way of getting the first line 
+    elif stderr:
+        first_line = stderr.splitlines()[0] # Much better way of getting the first line  
+        # firstline, *_ = output.stderr.split("\n",1)
     else:
-        firstline, *_ = output.stderr.split("\n",1)
+        first_line = "<no output>"
 
     print(f"Output: {firstline}\n")
 
