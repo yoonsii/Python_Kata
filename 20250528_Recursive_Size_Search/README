@@ -1,0 +1,55 @@
+# Exercise — Directory-Size Audit & Alert
+
+## Objective
+Create a Python script that scans a list of directories, totals the disk space each one consumes, and flags any directory whose size exceeds a configurable threshold.
+
+---
+
+## Requirements
+
+1. **Input file**  
+   * `directories.txt` (UTF-8), one directory path per line.  
+   * Skip blank lines and lines beginning with `#`.
+
+2. **Threshold configuration**  
+   * Command-line flag `--threshold` **in megabytes** (default `100`).  
+   * Environment variable `SIZE_THRESHOLD_MB` may also set the threshold (CLI flag takes precedence).
+
+3. **Directory size calculation**  
+   * Recursively walk each directory (do **not** follow symlinks).  
+   * Sum `st_size` of every regular file encountered.
+
+4. **Output**  
+   * For each directory that is successfully scanned, print:  
+     ```
+     Directory: <path>
+     Size:      <size in MB with one decimal>
+     Status:    OK | WARNING (over <threshold> MB)
+     ```  
+   * For error cases print the directory path plus one of:  
+     * `NOT FOUND` – path does not exist  
+     * `NOT A DIRECTORY` – path exists but is not a directory  
+     * `PERMISSION DENIED` – cannot read directory or files
+
+5. **Sorting**  
+   * After scanning, sort all successfully sized directories **descending by size** before printing.
+
+6. **Robustness**  
+   * The script **must not crash** if any directory is unreadable or invalid.  
+   * Catch and handle `FileNotFoundError`, `PermissionError`, and other `OSError`s gracefully.
+
+7. **Structure & constraints**  
+   * Use only Python standard-library modules (`os`, `pathlib`, `argparse`, etc.).  
+   * Encapsulate logic in functions and include a `main()` guarded by `if __name__ == "__main__":`.  
+   * Add type hints where appropriate.
+
+---
+
+## Acceptance Criteria
+
+* Running the script with a valid `directories.txt` produces a size-sorted report in the exact format specified.
+* Directories larger than the threshold are clearly labeled `WARNING`.
+* Invalid or unreadable paths are reported with the correct error status and do **not** terminate execution.
+* The threshold can be altered via `--threshold` or `SIZE_THRESHOLD_MB`; the CLI flag overrides the environment variable.
+* The program uses only standard-library imports and is organized into reusable functions with a proper entry-point guard.
+* No uncaught exceptions occur for any combination of valid directories, missing paths, or permission errors.
