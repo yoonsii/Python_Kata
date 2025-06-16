@@ -18,6 +18,10 @@ with open(filename) as file:
             print(repr(line))
             result = subprocess.run(["du", "-sh", path], capture_output=True, text=True)
             print(result) 
+            print(result.stdout)
+
+            rstdout = result.stdout.split('\t')[0]
+            print(rstdout)
 
 
 def main():
