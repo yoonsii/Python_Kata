@@ -7,3 +7,28 @@ fruits = ['apple','banana','cherry','durian']
 
 for i, f in enumerate(fruits):
     print(f"{i}, and fruit {f}")
+
+scores = [55,66,77,88,91]
+names = ['Anna','Bames','Charlie']
+
+scores_and_list = zip(names,scores)
+
+for thing in scores_and_list:
+    print(f"{thing[0]} scores {thing[1]}")
+
+
+for i in range(21):
+    if i % 3 == 0 and i % 5 == 0:
+        print(i,"fizzbuzz")
+    elif i % 3 == 0:
+        print(i,"fizz")
+    elif i % 5 == 0:
+        print(i,"buzz")
+    else:
+        print(i)
+
+for i in range(5):
+    for j in range(5):
+        total = i + j
+        print("#" if total % 2 == 0 else ".", end="")
+    print()
