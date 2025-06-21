@@ -68,3 +68,21 @@ def apply_to_all(func, lst):
 #Build a dictionary using dict comprehension where keys are numbers 1–5 and values are their cubes.
 #Use list comprehension to flatten [[1,2,3],[4,5],[6]] into [1,2,3,4,5,6]
 
+lst = [num**2 for num in range (1,21) if num % 2 == 0]
+
+for num in lst:
+    print(num)
+
+lst = ["cat", "apple", "dog", "banana", "ant"]
+
+three_lst = [word for word in lst if len(word) == 3]
+
+for word in three_lst:
+    print(three_lst)
+
+lst = [[1,2,3],[4,5],[6]] 
+
+flatten_list = [num for sublist in lst for num in sublist]
+
+print(flatten_list)
+
