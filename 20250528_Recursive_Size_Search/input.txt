@@ -1,1 +1,6 @@
 /home/yoonsi/Projects/
+bob
+#Random comment
+/home/yoonsi/Kata/Python_Kata
+/etc/
+
