@@ -75,7 +75,23 @@ print(flatten_and_square(matrix))
 # Write a function is_subset(small, big) that returns True if all elements in small are in big. Use set logic.
 # Given a list of names, remove duplicates and sort them alphabetically.
 
+def has_duplicates(lst):
+    return len(lst) != len(set(lst))
 
+print(has_duplicates([1,2,3,4,5,5]))
+
+def common_letters(s1, s2):
+    return set(s1) & set(s2)
+
+print(common_letters("hello","world"))
+
+def is_subset(small, big):
+    return small.issubset(big)
+
+
+lst = ['alice','bob','damien','charlie','charlie']
+
+print(sorted(set(lst)))
 
     
     
