@@ -11,4 +11,46 @@ def count_uppercase(s):
 print(count_uppercase("helLLo ThiS is uPPer"))
 
 def camel_to_snake(s):
+    output = []
+    for c in s:
+        if c.islower():
+            output.append(c)
+        else:
+            output.append(f"_{c}")
+    return "".join(output).lower()
+
+print(camel_to_snake("helloThisIsCamelCase"))
+
+wordcount = []
+ss = "DevOps is disciplineD"
+for word in ss.split():
+    print(word)
+    wordcount.append(len(word))
+
+print(wordcount)
+
+def starts_and_ends_same(s):
+    return ss[0] == ss[-1]
+    
+print(starts_and_ends_same(ss))
+
+def manual_replace(s, old, new):
+    posn = s.find(old)
+    while(posn > -1):
+        output = rep_str[:posn] + new + rep_str[posn + len(new):]
+        posn = s.find(old)
+    return output
+    
+
+
+rep_str = "Hi this is a string"
+
+# print(rep_str.find("is"))
+# findpos = rep_str.find("is")
+
+# print(rep_str[:findpos])
+# print(rep_str[findpos + len("is"):])
+
+print(manual_replace(rep_str, "is","xx"))
+
     
