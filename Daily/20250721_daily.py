@@ -37,7 +37,7 @@ print(starts_and_ends_same(ss))
 def manual_replace(s, old, new):
     posn = s.find(old)
     while(posn > -1):
-        s = s[:posn] + new + s[posn + len(new):]
+        s = s[:posn] + new + s[posn + len(old):]
         posn = s.find(old)
     return s
     
@@ -46,4 +46,4 @@ rep_str = "is this is a string"
 
 print(manual_replace(rep_str, "is","xxxxx"))
 
-#print(manual_replace("isis", "is", "xyz"))  
+print(manual_replace("isis", "is", "xyz"))  
