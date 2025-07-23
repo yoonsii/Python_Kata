@@ -21,6 +21,7 @@ print(alternate_case("Hey guys how's EveryBody doing?"))
 
 def reverse(s):
     return reversed(s)
+    # Need to remember this returns an iterator not a string so we need to join
 
 # but also to understand the concepts I'll do it the other way too
 
@@ -117,6 +118,8 @@ def remove_duplicate(lst):
     return set(lst)
 
 print(remove_duplicate(lst))
+
+# seems that when I run this multiple times the resulting set is in different orders at different times. why?
 
     
     

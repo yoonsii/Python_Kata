@@ -37,20 +37,13 @@ print(starts_and_ends_same(ss))
 def manual_replace(s, old, new):
     posn = s.find(old)
     while(posn > -1):
-        output = rep_str[:posn] + new + rep_str[posn + len(new):]
+        s = s[:posn] + new + s[posn + len(new):]
         posn = s.find(old)
-    return output
+    return s
     
 
+rep_str = "is this is a string"
 
-rep_str = "Hi this is a string"
+print(manual_replace(rep_str, "is","xxxxx"))
 
-# print(rep_str.find("is"))
-# findpos = rep_str.find("is")
-
-# print(rep_str[:findpos])
-# print(rep_str[findpos + len("is"):])
-
-print(manual_replace(rep_str, "is","xx"))
-
-    
+#print(manual_replace("isis", "is", "xyz"))  
