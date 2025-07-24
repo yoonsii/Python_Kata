@@ -60,3 +60,7 @@ def find_max_index_alt(lst):
     return max
 
 
+# Not sure exactly how to do this one but I'll have a crack at how I guess it should go
+
+def apply_if(func, lst, condition):
+    return [func(word) for word in lst if condition] 
