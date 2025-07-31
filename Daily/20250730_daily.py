@@ -11,6 +11,17 @@ def camel_to_snake(s):
 
 print(camel_to_snake("thisIsCamelCase"))
 
+str = "DevOps is discipline"
+
+lengths = [len(word) for word in str.split()]
+print(lengths)
+
+def starts_and_ends_same(s):
+    s = s.trim().lower()
+    return s[0] == s[-1] if s else False
+
+
+
  
 
 # Batch 2: Lists, Logic, and Reusability 
