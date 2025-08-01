@@ -6,8 +6,6 @@
 def clean_username(s):
     return s.strip().lower()
 
-print(clean_username("  sdfSDFSss  "))
-
 def snake_to_title(s):
     s_out = ""
     lst = [word.capitalize() for word in s.split("_")] # I managed to use a list comprehension here! (proud)

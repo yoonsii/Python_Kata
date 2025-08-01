@@ -20,6 +20,14 @@ def starts_and_ends_same(s):
     s = s.trim().lower()
     return s[0] == s[-1] if s else False
 
+def manual_replace(s, old, new):       
+    while(s.find(old) != -1):
+        print(s[:s.find(old)])
+        s = s[:s.find(old)] + new + s[s.find(old) + len(old):]
+    return s
+str = "This is a stringis"
+    
+print(manual_replace(str, "is", "zzz"))
 
 
  

@@ -86,3 +86,4 @@ flatten_list = [num for sublist in lst for num in sublist]
 
 print(flatten_list)
 
+
