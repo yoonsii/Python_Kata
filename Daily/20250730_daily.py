@@ -40,7 +40,48 @@ print(manual_replace(str, "is", "zzz"))
 # Write a function find_max_index(lst) that returns the index of the largest element. 
 # Write a function apply_if(func, lst, condition) that applies func to each element only if it meets the condition. Use list comprehension. 
 
- 
+lst = [2,4,6,2,4,7,7,6,8]
+
+def all_even(lst):
+    for x in lst:
+        if x % 2 == 1:
+            return False
+    return True
+
+print(all_even(lst))
+
+lst = ["a","bb","ccc","dddd","eeeee"]
+
+def filter_long_words(words,length):
+    return [word for word in words if len(word) > length]
+
+print(filter_long_words(lst, 3))
+
+def running_total(lst):
+    count = 0
+    output = []
+    for x in lst:
+        count += x
+        output.append(count)
+    return output
+
+lst = [1,2,3]
+
+print(running_total(lst))
+
+def find_max_index(lst):
+    max = 0
+    for x in lst:
+        if x > max:
+            max = x
+    return max
+
+#alternatively could use max() but defeats the purpose of learning here
+
+def apply_if(func, lst, condition):
+    return [func(item) for item in lst if condition(item)]
+
+# I don't fully understand this and would appreciate a lesson/example of this in use and why it would be used.
 
 # Batch 3: Sets, Tuples, and Dictionaries 
 # Write a function letter_frequency(s) that returns a dictionary of letter counts. 
