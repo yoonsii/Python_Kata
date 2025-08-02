@@ -1,3 +1,4 @@
+from collections import defaultdict
 # Batch 1: Strings, Loops, and Conditionals 
 # Write a function camel_to_snake(s) that converts camelCase to snake_case: 
 # Example: "helloWorldTest" → "hello_world_test" 
@@ -90,4 +91,30 @@ def apply_if(func, lst, condition):
 # (e.g., {'a': 1, 'b': 2} → {1: 'a', 2: 'b'}) 
 # Write a function dict_diff_keys(d1, d2) that returns the keys that are different between two dicts (i.e., keys that only exist in one or the other). 
 
- 
+def letter_frequency(s):
+    frequency_dict = defaultdict(int)
+    for c in s:
+        frequency_dict[c] += 1
+    return frequency_dict
+
+print(letter_frequency("hello"))
+
+d = {'a':1, 'b':2}
+
+def invert_dict(d): # the spec for this doesn't specify whether to output a new dict or swap in original - I'm assuming new dict
+    output = {}
+    for key in d.keys():
+        output[d[key]] = key
+
+    return output
+
+print(invert_dict(d))
+
+fruits = {"a":"apple", "b":"banana"}
+veggies = {"c":"cucumber", "d":"daikon", "a": "apple"}
+
+
+def dict_diff_keys(d1,d2):
+    return(set(d1.keys()).symmetric_difference(set(d2.keys())))
+
+print(dict_diff_keys(fruits,veggies))
