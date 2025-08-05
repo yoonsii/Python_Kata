@@ -35,3 +35,7 @@ print(lst)
 
 # 10. Dict Merge Tool
 # Merge two kwargs-style dicts using ** unpacking
+
+
+def merge_dicts(dict1, dict2):
+    return {**dict1, **dict2}
